@@ -34,6 +34,10 @@ function ls {
     Get-ChildItem -Force $args
 }
 
+function ls-mod {
+    Get-ChildItem | Sort-Object -Descending LastWriteTime
+}
+
 
 ################################################################################
 # Posh Git
