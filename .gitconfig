@@ -1,43 +1,50 @@
-[user]
-	name = Kevin Peters
-	email = kwpeters@gmail.com
 [core]
-	editor = emacs
-	autocrlf = input
-	excludesfile = /Users/kwpeters/.gitignore_global
-	longpaths = true
-[github]
-	user = kwpeters
-	oauth-token = ee7ebe0d8f6d88664ab90e68eb7262c5ec0c2a9d
+	editor = \"C:\\Users\\kwpeters.RA-INT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	autocrlf = true
+	excludesfile = C:\\Users\\kwpeters.RA-INT\\dev\\kwp\\dotfiles\\.gitignore_global
+    longpaths = true
+[user]
+	email = kwpeters@ra.rockwell.com
+	name = Kevin Peters
+
+[diff]
+    tool = vscode
+
+[difftool]
+  prompt = false
+
 [color]
 	ui = auto
+
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[difftool "winmerge"]
+    cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
 [difftool "kdiff3"]
-    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
-[difftool]
-    prompt = false
-[diff]
-	tool = opendiff
-[mergetool "kdiff3"]
-    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-    trustExitCode = false
-[mergetool]
-    keepBackup = false
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
 [merge]
     tool = kdiff3
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+
 [mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
-[push]
-	default = simple
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = false
+
+[mergetool]
+	prompt = true
+[mergetool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+	keepBackup = false
+	trustExitCode = true
 
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	st = status
 	co = checkout
     br = branch --sort=committerdate
-[commit]
-	template = /Users/kwpeters/.stCommitMsg
