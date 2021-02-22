@@ -34,9 +34,21 @@ function ls {
     Get-ChildItem -Force $args
 }
 
+
 function ls-mod {
     # List directory and sort so that most recently modified items are first.
     Get-ChildItem | Sort-Object -Descending LastWriteTime
+}
+
+
+function nvm-use {
+    if (Test-Path .nvmrc) {
+        nvm use $(Get-Content .nvmrc)
+    }
+}
+
+function git-config-personal {
+    git config user.name "Kevin Peters" && git config user.email "kwpeters@gmail.com"
 }
 
 
