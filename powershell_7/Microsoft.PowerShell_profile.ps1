@@ -99,4 +99,4 @@ function capcom {
 ################################################################################
 
 # Append script location(s) to the end of the PATH environment variable.
-$env:path += ";C:\Users\kwpeters.RA-INT\dev\kwp\PowerShellScripts"
+$env:path += ";C:\Users\kwpeters\dev\kwp\PowerShellScripts"
