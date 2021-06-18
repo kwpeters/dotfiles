@@ -1,5 +1,9 @@
 /.idea/
 
+# Temporary file when .emacs is edited using Emacs.  This file will be
+# created if the .emacs file is symlinked to in this repository.
+\#.emacs\#
+
 # Visual Studio Code
 .vscode/*
 !.vscode/launch.json
