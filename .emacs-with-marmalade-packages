@@ -19,9 +19,9 @@
    (quote
     ("/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/todo.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/home.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/development-ideas.org")))
  '(org-startup-indented t)
-;; '(package-selected-packages
-;;   (quote
-;;    (fancy-narrow fiplr expand-region )))
+ '(package-selected-packages
+   (quote
+    (fancy-narrow zencoding-mode zenburn-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tron-theme toxi-theme tango-2-theme soothe-theme solarized-theme sea-before-storm-theme reverse-theme request qsimpleq-theme naquadah-theme monokai-theme molokai-theme markdown-mode+ late-night-theme js2-refactor ir-black-theme inkpot-theme indent-guide gruber-darker-theme grandshell-theme github-theme gh fiplr expand-region exec-path-from-shell evil-paredit evil-numbers evil-nerd-commenter evil-indent-textobject espresso-theme emmet-mode deep-thought-theme ace-jump-mode)))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
  '(show-paren-mode t)
@@ -46,19 +46,59 @@
 
   ; List the packages you want.
   (setq package-list '(
+      ace-jump-mode
+      deep-thought-theme
+      emmet-mode
+      espresso-theme
+      evil-indent-textobject
+      evil-nerd-commenter
+      evil-numbers
+      evil-paredit
+      evil
+      exec-path-from-shell
       expand-region
+      gh
+      github-theme
+      grandshell-theme
+      gruber-darker-theme
+      inkpot-theme
+      ir-black-theme
+      js2-refactor
       dash
       js2-mode
+      late-night-theme
+      logito
+      markdown-mode+
+      markdown-mode
+      molokai-theme
+      monokai-theme
+      multiple-cursors
+      naquadah-theme
+      paredit
+      qsimpleq-theme
+      request
+      reverse-theme
+      s
+      sea-before-storm-theme
+      solarized-theme
+      soothe-theme
+      tango-2-theme
+      toxi-theme
+      tron-theme
+      twilight-anti-bright-theme
+      twilight-bright-theme
+      twilight-theme
       undo-tree
-      yasnippet))
+      yasnippet
+      zenburn-theme
+      zencoding-mode
+      indent-guide
+      fiplr))
 
   ; List the repositories containing them.
-;;    (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-;;                           ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                           ("melpa" . "http://melpa.milkbox.net/packages/")))
-
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))                           
+                           ("marmalade" . "http://marmalade-repo.org/packages/")
+                           ("melpa" . "http://melpa.milkbox.net/packages/")))
 
   ; activate all the packages (in particular autoloads)
   (package-initialize)
@@ -139,11 +179,11 @@
 ;; A GNU Emacs library to setup environment variables from the user's shell.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (when (memq window-system '(mac ns))
-;;   (exec-path-from-shell-initialize)
-;;   (exec-path-from-shell-copy-env "PYTHONPATH")
-;;   (exec-path-from-shell-copy-env "CLOUDHOME")
-;; )
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "PYTHONPATH")
+  (exec-path-from-shell-copy-env "CLOUDHOME")
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -225,8 +265,7 @@
 ;; This is a mode that allows CSS-like syntax when composing HTML documents.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
-
+(add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
 ;;
 ;; C-j to expand
 ;;
@@ -267,24 +306,24 @@
 ;; don't like it.
 ;;(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;; (define-key global-map (kbd "C-; w") 'ace-jump-mode)
-;; (define-key global-map (kbd "C-; c") 'ace-jump-char-mode)
-;; (define-key global-map (kbd "C-; l") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-; w") 'ace-jump-mode)
+(define-key global-map (kbd "C-; c") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-; l") 'ace-jump-line-mode)
 
 ;; Needed for ace-jump-mode
 ;; http://stackoverflow.com/questions/10105123/eval-when-compile-not-being-honored
-;; (require 'cl)
+(require 'cl)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Evil mode
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'evil)
+(require 'evil)
 
 
-;; (global-set-key (kbd "C-*") 'evil-search-symbol-forward)
-;; (global-set-key (kbd "C-#") 'evil-search-symbol-backward)
+(global-set-key (kbd "C-*") 'evil-search-symbol-forward)
+(global-set-key (kbd "C-#") 'evil-search-symbol-backward)
 
 
 
@@ -293,11 +332,11 @@
 ;; multiple-cursors
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'multiple-cursors)
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -422,18 +461,18 @@ same directory as the org-buffer and insert a link to this file."
 (add-hook 'js2-mode-hook (lambda () (set-fill-column 79)))
 
 ;; js2-refactor configuration
-;; (require 'js2-refactor)
+(require 'js2-refactor)
 ;; js2-refactor keybindings
 ;; eg. extract function with `C-c C-m ef`.
-;; (js2r-add-keybindings-with-prefix "C-c C-m")
+(js2r-add-keybindings-with-prefix "C-c C-m")
 
 ;; (add-hook 'js2-mode-hook (lambda () (company-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (linum-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (highlight-symbol-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (electric-pair-mode t)))
-;; (add-hook 'js2-mode-hook (lambda () (js2-refactor-mode t)))
-;; (add-hook 'focus-out-hook 'save-all)
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (linum-mode t)))
+(add-hook 'js2-mode-hook (lambda () (highlight-symbol-mode t)))
+(add-hook 'js2-mode-hook (lambda () (electric-pair-mode t)))
+(add-hook 'js2-mode-hook (lambda () (js2-refactor-mode t)))
+(add-hook 'focus-out-hook 'save-all)
 
 (global-set-key (kbd "C-; h") 'highlight-symbol-at-point)
 ;; smartscan
@@ -528,10 +567,10 @@ same directory as the org-buffer and insert a link to this file."
 ;; indent-guide
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'indent-guide)
-;; (indent-guide-global-mode)
+(require 'indent-guide)
+(indent-guide-global-mode)
 ;;(set-face-foreground 'indent-guide-face "#c3c3c3")
-;; (set-face-foreground 'indent-guide-face "#E3E3E3")
+(set-face-foreground 'indent-guide-face "#E3E3E3")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
