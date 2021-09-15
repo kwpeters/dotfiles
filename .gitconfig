@@ -1,12 +1,13 @@
 [core]
-	editor = \"C:\\Users\\kwpeters.RA-INT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --wait
 	autocrlf = true
-	excludesfile = C:\\Users\\kwpeters.RA-INT\\dev\\kwp\\dotfiles\\.gitignore_global
-    longpaths = true
+	excludesfile = C:\\Users\\kwpeters\\dev\\kwp\\dotfiles\\.gitignore_global
+	longpaths = true
 [user]
 	email = kwpeters@ra.rockwell.com
 	name = Kevin Peters
 
+	signingkey = 792A50D940073707
 [diff]
     tool = vscode
 
@@ -14,12 +15,10 @@
   prompt = false
 
 [color]
-	ui = auto
+    ui = auto
 
 [difftool "sourcetree"]
 	cmd = '' \"$LOCAL\" \"$REMOTE\"
-[difftool "winmerge"]
-    cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
@@ -35,16 +34,16 @@
 [mergetool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
-
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepBackup = false
 [mergetool]
 	prompt = true
 [mergetool "vsdiffmerge"]
 	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
 	keepBackup = false
 	trustExitCode = true
-
-[alias]
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	st = status
-	co = checkout
-    br = branch --sort=committerdate
+[commit]
+	gpgsign = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe

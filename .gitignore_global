@@ -16,11 +16,7 @@
 # Mac OS X files
 .DS_Store
 
-# WebStorm temporary files
-/.idea/
-
-# VSCode
-/.vscode/
+# F# extension files
 /.ionide/
 
 # Emacs temporary files
