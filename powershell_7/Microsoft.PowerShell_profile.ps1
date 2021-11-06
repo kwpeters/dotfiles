@@ -105,4 +105,4 @@ Set-Alias copywrite Invoke-Copywrite
 ################################################################################
 
 # Append script location(s) to the end of the PATH environment variable.
-$env:path += ";C:\Users\kwpeters\dev\kwp\PowerShellScripts"
+$env:path += ";C:\Users\kwpeters\dev\kwp\PowerShellScripts;C:\Users\kwpeters\dev\kwp\tewl\clitools\dist-saved\src;"
