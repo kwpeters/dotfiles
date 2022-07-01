@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(custom-safe-themes
-   (quote
-    ("da509d0e78ce656776a5442daa1729c329869b4b36938f0773275557fb8e3d0e" "b1d5aefcd9e4f3684337a5ad52b026e2ac3e6d850aee3b1be99fb4fbd8e6eaac" "f3361aa4438d1ee8e6e81082d72fe032f3ae1f11a0b40fc0da85ff6a10d2c63e" "5701b47f802d812cd1dbfae691e0ffee76f95a96b864da084950e16492cb303d" "ff358431f7fab69bec96869c702de0bc336cd275b0cb514f9d8fa5b514af43a6" "f3e40de3cb852915720f3cb28023208e4c9bd8eb45508596d9aa915695358f37" "f2fa9b17daf4af1b4c3927e552c795d0218dbd9bd94d79601663ebf97a1b6dfe" "3386120d40093812a450188b5041099f60998a5e07d5e898d8d7e80d3aaaae78" "a715475bfad76bd086a177635a1f7aee9b5e157f6d00e428722f5f869371b853" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "35f3a80494478974c4c698bdf502d8e4c7d060fe489ebc73a2bcf03e6af7807d" "48441785d77807dce4e71b065f17504fbdfb6cbcd475523d20da4f1a14fbddac" "2d16f85f22f1841390dfc1234bd5acfcce202d9bb1512aa8eabd0068051ac8c3" "246a51f19b632c27d7071877ea99805d4f8131b0ff7acb8a607d4fd1c101e163" "6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "34e7163479ef3669943b3b9b1fabe639d6e0a0453e0de79cea2c52cb520d3bc4" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "357d5abe6f693f2875bb3113f5c031b7031f21717e8078f90d9d9bc3a14bcbd8" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default)))
+   '("da509d0e78ce656776a5442daa1729c329869b4b36938f0773275557fb8e3d0e" "b1d5aefcd9e4f3684337a5ad52b026e2ac3e6d850aee3b1be99fb4fbd8e6eaac" "f3361aa4438d1ee8e6e81082d72fe032f3ae1f11a0b40fc0da85ff6a10d2c63e" "5701b47f802d812cd1dbfae691e0ffee76f95a96b864da084950e16492cb303d" "ff358431f7fab69bec96869c702de0bc336cd275b0cb514f9d8fa5b514af43a6" "f3e40de3cb852915720f3cb28023208e4c9bd8eb45508596d9aa915695358f37" "f2fa9b17daf4af1b4c3927e552c795d0218dbd9bd94d79601663ebf97a1b6dfe" "3386120d40093812a450188b5041099f60998a5e07d5e898d8d7e80d3aaaae78" "a715475bfad76bd086a177635a1f7aee9b5e157f6d00e428722f5f869371b853" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "35f3a80494478974c4c698bdf502d8e4c7d060fe489ebc73a2bcf03e6af7807d" "48441785d77807dce4e71b065f17504fbdfb6cbcd475523d20da4f1a14fbddac" "2d16f85f22f1841390dfc1234bd5acfcce202d9bb1512aa8eabd0068051ac8c3" "246a51f19b632c27d7071877ea99805d4f8131b0ff7acb8a607d4fd1c101e163" "6a9606327ecca6e772fba6ef46137d129e6d1888dcfc65d0b9b27a7a00a4af20" "34e7163479ef3669943b3b9b1fabe639d6e0a0453e0de79cea2c52cb520d3bc4" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "357d5abe6f693f2875bb3113f5c031b7031f21717e8078f90d9d9bc3a14bcbd8" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))
  '(delete-selection-mode 1)
  '(eol-mnemonic-dos "(DOS)")
  '(eol-mnemonic-mac "(Mac)")
@@ -16,19 +15,16 @@
  '(line-spacing 1)
  '(ns-pop-up-frames nil)
  '(org-agenda-files
-   (quote
-    ("/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/todo.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/home.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/development-ideas.org")))
+   '("/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/todo.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/home.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/development-ideas.org"))
  '(org-startup-indented t)
-;; '(package-selected-packages
-;;   (quote
-;;    (fancy-narrow fiplr expand-region )))
+ '(package-selected-packages '(yasnippet undo-tree js2-mode expand-region dash))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
  '(show-paren-mode t)
  '(show-trailing-whitespace t)
  '(speedbar-show-unknown-files t)
  '(tool-bar-mode nil)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+ '(uniquify-buffer-name-style 'forward nil (uniquify)))
 
 ;; A function that will save all buffers
 (defun save-all ()
