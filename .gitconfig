@@ -1,13 +1,13 @@
 [core]
-	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --wait
+	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" -n --wait
 	autocrlf = true
-	excludesfile = C:\\Users\\kwpeters\\dev\\kwp\\dotfiles\\.gitignore_global
+	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
 	longpaths = true
 [user]
 	email = kwpeters@ra.rockwell.com
 	name = Kevin Peters
 
-	signingkey = 792A50D940073707
+	signingkey = 7C1A5391A11ADDA0
 [diff]
     tool = vscode
 
@@ -34,16 +34,9 @@
 [mergetool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
-[difftool "vsdiffmerge"]
-	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
-	keepBackup = false
-[mergetool]
-	prompt = true
-[mergetool "vsdiffmerge"]
-	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
-	keepBackup = false
-	trustExitCode = true
+
 [commit]
 	gpgsign = true
-[gpg]
-	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+
+[credential "https://ragitlabegl4.ra.rockwell.com"]
+	provider = gitlab
