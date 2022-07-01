@@ -93,12 +93,6 @@ function capcom {
     python $scriptPath
 }
 
-function Invoke-Copywrite {
-    $scriptPath = Join-Path  -Path $env:HOME -ChildPath "dev\kwp\tewl\copywrite\dist\app\copywrite.js"
-    node.exe $scriptPath $args
-}
-Set-Alias copywrite Invoke-Copywrite
-
 
 ################################################################################
 # PATH environment variable
