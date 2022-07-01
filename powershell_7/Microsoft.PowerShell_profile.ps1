@@ -105,4 +105,46 @@ Set-Alias copywrite Invoke-Copywrite
 ################################################################################
 
 # Append script location(s) to the end of the PATH environment variable.
-$env:path += ";C:\Users\kwpeters\dev\kwp\PowerShellScripts;C:\Users\kwpeters\dev\kwp\tewl\clitools\dist-saved\src;"
+#$env:path += ";C:\Users\kwpeters\dev\kwp\PowerShellScripts;C:\Users\kwpeters\dev\kwp\tewl\clitools\dist-saved\src;"
+
+
+function Add-Path {
+    param ([string]$Dir)
+
+    if (Test-Path -Path $Dir) {
+        if (-not ($env:path -match ';$')) {
+            $env:path += ";"
+        }
+        $env:path += $Dir
+        $env:path += ";"
+        "Added to PATH: $Dir"
+    }
+    else {
+        "--------------------------------------------------------------------------------"
+        "E R R O R !"
+        "--------------------------------------------------------------------------------"
+        "The following directory does not exist and has not been added to PATH."
+        $Dir
+        # "$Dir Path doesn't exist."
+    }
+}
+
+
+function Check-Path {
+    param ([string]$Dir)
+
+    if (-not($env:path -match $Dir)) {
+        "--------------------------------------------------------------------------------"
+        "E R R O R !"
+        "--------------------------------------------------------------------------------"
+        "The following directory should be in your PATH."
+        $dir
+    }
+}
+
+Add-Path -Dir "C:\Users\kwpeters\dev\kwp\PowerShellScripts"
+Add-Path -Dir "C:\Users\kwpeters\dev\kwp\tewl\clitools\dist-saved\src"
+
+# The following needs to be in PATH for all processes (not just PowerShell).
+# For example, VSCode needs to find gpg when committing.
+Check-Path -Dir "C:\\Program Files\\Git\\usr\\bin"
