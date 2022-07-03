@@ -141,4 +141,3 @@ Add-Path -Dir "C:\Users\kwpeters\dev\kwp\tewl\clitools\dist-saved\src"
 
 # The following needs to be in PATH for all processes (not just PowerShell).
 # For example, VSCode needs to find gpg when committing.
-Check-Path -Dir "C:\\Program Files\\Git\\usr\\bin"
