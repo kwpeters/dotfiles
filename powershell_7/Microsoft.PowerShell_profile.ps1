@@ -136,3 +136,6 @@ function Check-Path {
 # C:\Program Files\Git\usr\bin, because the two contain commands that overlap.
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
+
+# Give an overview of local work that has not been committed and pushed.
+localWork C:\Users\kwpeters\dev\
