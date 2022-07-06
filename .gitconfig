@@ -43,3 +43,5 @@
 
 [credential "https://ragitlabegl4.ra.rockwell.com"]
 	provider = gitlab
+[safe]
+	directory = %(prefix)///floyd/home/dev/rok/lemans/LogixVM
