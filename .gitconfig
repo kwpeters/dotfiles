@@ -45,3 +45,6 @@
 	provider = gitlab
 [safe]
 	directory = %(prefix)///floyd/home/dev/rok/lemans/LogixVM
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
+	lg = log --pretty=oneline --graph --decorate --all
