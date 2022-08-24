@@ -127,9 +127,9 @@
                     "type": "root"
                 },
                 {
-                    "foreground": "#CC4B16",
+                    "foreground": "#ebebeb",
                     "style": "plain",
-                    "template": "\n",
+                    "template": "\n>",
                     "type": "text"
                 }
             ],
