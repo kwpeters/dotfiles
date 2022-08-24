@@ -57,12 +57,22 @@ function git-config-personal {
 ################################################################################
 Import-Module posh-git
 
-# In the prompt, replace the home directory path with "~".
-$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-# Change the default prompt color ot orange.
-$GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
-# Insert a newline before the prompt suffix.
-$GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
+# # In the prompt, replace the home directory path with "~".
+# $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+# # Change the default prompt color ot orange.
+# $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
+# # Insert a newline before the prompt suffix.
+# $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
+
+#
+# Themes
+#
+
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\emodipt-extend.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
+#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gruvbox.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:HOME\dev\kwp\dotfiles\powershell_7\oh-my-posh\kwp.omp.json" | Invoke-Expression
 
 
 ################################################################################
