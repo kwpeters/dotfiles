@@ -6,35 +6,49 @@
 [user]
 	email = kwpeters@ra.rockwell.com
 	name = Kevin Peters
-
 	signingkey = 9DC956BB7375038B
+
+[color]
+    ui = auto
+
+################################################################################
+# Diffing
+################################################################################
 [diff]
     tool = vscode
 
 [difftool]
   prompt = false
 
-[color]
-    ui = auto
-
 [difftool "sourcetree"]
 	cmd = '' \"$LOCAL\" \"$REMOTE\"
+
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
+
 [difftool "vscode"]
     cmd = code --new-window --wait --diff $LOCAL $REMOTE
 
+
+################################################################################
+# Merging
+################################################################################
 [merge]
-    tool = kdiff3
+    tool = code
 
 [mergetool "sourcetree"]
 	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
+
 [mergetool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
 
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+################################################################################
 [commit]
 	gpgsign = true
 
@@ -43,8 +57,7 @@
 
 [credential "https://ragitlabegl4.ra.rockwell.com"]
 	provider = gitlab
-[safe]
-	directory = %(prefix)///floyd/home/dev/rok/lemans/LogixVM
+
 [alias]
 	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
 	lg = log --pretty=oneline --graph --decorate --all
