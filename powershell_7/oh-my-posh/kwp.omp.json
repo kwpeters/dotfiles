@@ -13,7 +13,8 @@
                     "type": "os"
                 },
                 {
-                    "background": "#458588",
+                    // "background": "#458588",
+                    "background": "#6bda99",
                     "foreground": "#282828",
                     "powerline_symbol": "\ue0b0",
                     "properties": {
@@ -125,11 +126,21 @@
                     "style": "powerline",
                     "template": " \uf0ad ",
                     "type": "root"
-                },
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
                 {
-                    "foreground": "#ebebeb",
+                    "foreground": "#6bda99",
                     "style": "plain",
-                    "template": "\n>",
+                    // "template": "\u276f ",
+                    // "template": "\uE0C2\u2588\ue0b0 ",
+                    // "template": "\uE242",
+                    "template": "\ue285",
                     "type": "text"
                 }
             ],
