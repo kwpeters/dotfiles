@@ -126,6 +126,20 @@
                     "style": "powerline",
                     "template": " \uf0ad ",
                     "type": "root"
+                },
+                {
+                    "background": "#720808",
+                    "foreground": "#f0d0d0",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#FF3C3C{{ end }}"
+                    ],
+                    "properties": {
+                        "always_enabled": false
+                    },
+                    "style": "diamond",
+                    "template": " \uf7d4{{ if gt .Code 0 }} {{.Code}}{{ end }} ",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "exit"
                 }
             ],
             "type": "prompt"
