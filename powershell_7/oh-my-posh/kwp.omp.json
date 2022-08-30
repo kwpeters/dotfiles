@@ -130,7 +130,7 @@
                 },
                 {
                     "background": "#720808",
-                    "foreground": "#f0d0d0",
+                    "foreground": "#eedddd",
                     "foreground_templates": [
                         "{{ if gt .Code 0 }}#FF3C3C{{ end }}"
                     ],
