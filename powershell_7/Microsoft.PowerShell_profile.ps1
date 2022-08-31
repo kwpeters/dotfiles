@@ -24,6 +24,28 @@
 #     Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
 #
 
+
+################################################################################
+# Reloading Profile
+################################################################################
+
+# When running the following function, you must dotsource it:
+# . Reload-Profile
+function Reload-Profile {
+    @(
+        $Profile.AllUsersAllHosts,
+        $Profile.AllUsersCurrentHost,
+        $Profile.CurrentUserAllHosts,
+        $Profile.CurrentUserCurrentHost
+    ) | ForEach-Object {
+        if (Test-Path $_) {
+            Write-Verbose "Running $_"
+            . $_
+        }
+    }
+}
+
+
 ################################################################################
 # Overridden Commands
 ################################################################################
