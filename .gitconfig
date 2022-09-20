@@ -20,9 +20,6 @@
 [difftool]
   prompt = false
 
-[difftool "sourcetree"]
-	cmd = '' \"$LOCAL\" \"$REMOTE\"
-
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
@@ -36,10 +33,6 @@
 ################################################################################
 [merge]
     tool = code
-
-[mergetool "sourcetree"]
-	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
 
 [mergetool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
