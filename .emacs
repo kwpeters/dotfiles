@@ -17,6 +17,7 @@
  '(org-agenda-files
    '("/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/todo.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/home.org" "/Users/kwpeters.RA-INT/SynologyDrive/Drive/home/data/development-ideas.org"))
  '(org-startup-indented t)
+ '(org-startup-folded t)
  '(package-selected-packages '(yasnippet undo-tree js2-mode expand-region dash))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
@@ -54,7 +55,7 @@
 ;;                           ("melpa" . "http://melpa.milkbox.net/packages/")))
 
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))                           
+                           ("melpa" . "http://melpa.milkbox.net/packages/")))
 
   ; activate all the packages (in particular autoloads)
   (package-initialize)
