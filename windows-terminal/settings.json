@@ -1,14 +1,14 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
             "command": "paste",
             "keys": "ctrl+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -20,7 +20,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -34,18 +34,18 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialCols": 100,
     "initialRows": 50,
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "cursorShape": "vintage",
-            "font": 
+            "font":
             {
                 "face": "MesloLGM NF",
                 "size": 9
             }
         },
-        "list": 
+        "list":
         [
             {
                 "closeOnExit": "graceful",
@@ -94,7 +94,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
