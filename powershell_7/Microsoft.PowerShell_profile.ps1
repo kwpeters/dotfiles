@@ -180,7 +180,8 @@ Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
 
 # Give an overview of local work that has not been committed and pushed.
-localWork C:\Users\kwpeters\dev\
+# Commenting this out, because it is too slow and annoying.
+# localWork C:\Users\kwpeters\dev\
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
