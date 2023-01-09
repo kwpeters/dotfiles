@@ -130,10 +130,10 @@ Set-Alias psadmin Enter-AdminPSSession
 # Personal Productivity
 ################################################################################
 
-function capcom {
-    $scriptPath = Join-Path -Path $env:HOME -ChildPath "dev/kwp/juggernaut/capcom.py"
-    python $scriptPath
-}
+# function capcom {
+#     $scriptPath = Join-Path -Path $env:HOME -ChildPath "dev/kwp/juggernaut/capcom.py"
+#     python $scriptPath
+# }
 
 
 ################################################################################
