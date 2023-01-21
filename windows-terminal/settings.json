@@ -4,8 +4,8 @@
     "actions":
     [
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command":
@@ -16,8 +16,8 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command":
@@ -81,13 +81,13 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "guid": "{30ffbea0-5281-5319-a26c-82ce934d452c}",
+                "guid": "{3d1b1094-ebe7-5213-92c1-f65d8ebf4760}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{6a45889a-848c-5566-adfb-5fe0875da30e}",
+                "guid": "{56aeeab1-6350-57e4-bab9-e25fa16a0f58}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
