@@ -1,23 +1,6 @@
 //
-// This configuration file typically resides at the following location:
+// See README.md for installation instructions.
 //
-// ~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
-//
-// To link to this file, do the following in PowerShell:
-//
-// 1.  See if there is an existing configuration file and delete it or back it up:
-//     > ls $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
-//
-// 2.  Make a sybolic link to this file:
-//     > New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ItemType SymbolicLink -Value <path_to_this_file>
-//
-// Note: If you're doing this from within Terminal itself, Terminal will
-//       periodically check for the existence of a config file and create one if
-//       it is missing.  So you may want to do the above steps all in one command:
-//
-//       > rm $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ItemType SymbolicLink -Value <path_to_this_file>
-//
-
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
