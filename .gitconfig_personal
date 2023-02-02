@@ -4,12 +4,9 @@
 	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
 	longpaths = true
 [user]
-	email = kwpeters@ra.rockwell.com
+	email = kwpeters@gmail.com
 	name = Kevin Peters
-	signingkey = 9DC956BB7375038B
 
-[color]
-    ui = auto
 
 ################################################################################
 # Diffing
@@ -39,17 +36,9 @@
     trustExitCode = false
 
 [mergetool "code"]
-  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 ################################################################################
-[commit]
-	gpgsign = true
-
-[gpg]
-	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
-
-[credential "https://ragitlabegl4.ra.rockwell.com"]
-	provider = gitlab
 
 [alias]
 	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
