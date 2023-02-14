@@ -1,42 +1,45 @@
 [core]
-	editor = \"C:\\Users\\kwpeters.RA-INT\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --wait
 	autocrlf = true
-	excludesfile =
+	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
+	longpaths = true
 [user]
-	email = kwpeters@ra.rockwell.com
+	email = kwpeters@gmail.com
 	name = Kevin Peters
 
+
+################################################################################
+# Diffing
+################################################################################
 [diff]
     tool = vscode
 
 [difftool]
   prompt = false
 
-[difftool "sourcetree"]
-	cmd = '' \"$LOCAL\" \"$REMOTE\"
-[difftool "winmerge"]
-    cmd = "'C:/Program Files (x86)/WinMerge/WinMergeU.exe'" -e "$LOCAL" "$REMOTE"
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
+
 [difftool "vscode"]
     cmd = code --new-window --wait --diff $LOCAL $REMOTE
 
-[merge]
-    tool = kdiff3
 
-[mergetool "sourcetree"]
-	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+################################################################################
+# Merging
+################################################################################
+[merge]
+    tool = code
+
 [mergetool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
     trustExitCode = false
-[difftool "vsdiffmerge"]
-	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
-	keepBackup = false
-[mergetool]
-	prompt = true
-[mergetool "vsdiffmerge"]
-	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
-	keepBackup = false
-	trustExitCode = true
+
+[mergetool "code"]
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+################################################################################
+
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
+	lg = log --pretty=oneline --graph --decorate --all

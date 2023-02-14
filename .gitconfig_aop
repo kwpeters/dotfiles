@@ -38,7 +38,7 @@
     trustExitCode = false
 
 [mergetool "code"]
-  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 ################################################################################
 
