@@ -389,6 +389,28 @@ same directory as the org-buffer and insert a link to this file."
 ;; (setq org-startup-with-inline-images t)
 
 
+(defun kwp-sharex-screenshot ()
+  (interactive)
+  (org-display-inline-images)
+  (setq filename
+        (concat
+         (make-temp-name
+          (concat (file-name-nondirectory (buffer-file-name))
+                  "_imgs/"
+                  (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+  (unless (file-exists-p (file-name-directory filename))
+    (make-directory (file-name-directory filename)))
+  (call-process "copyLatestShareXImg.cmd" nil nil nil filename)
+
+  ; insert into file if correctly taken
+  (if (file-exists-p filename)
+      (progn
+        (insert (concat "[[file:" filename "]]"))
+      )
+  )
+)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Default todo states for org mode
@@ -719,6 +741,31 @@ same directory as the org-buffer and insert a link to this file."
       ;; Setup the printer.
       ;;
       (setq ps-lpr-command "C:\\Program Files (x86)\\Ghostgum\\gsview\\gsprint.exe")
+
+      ;; This line causes ghostscript to query which printer to
+      ;; use - which you may not need if, for example, you only
+      ;; have one printer.
+      (setq ps-lpr-switches '("-query"))
+
+      (setq ps-printer-name t)
+
+      (setq ps-print-color-p t)
+      )
+  )
+
+(if (string-equal system-name "J386P13")
+    ;;--------------------------------------------------------------------
+    ;;
+    ;; Customizations specific to my my work Dell laptop
+    ;;
+    ;;--------------------------------------------------------------------
+    (progn
+      (message "Running on Kevin's work laptop")
+
+      ;;
+      ;; Setup the printer.
+      ;;
+      (setq ps-lpr-command "C:\\Program Files\\Ghostgum\\gsview\\gsprint.exe")
 
       ;; This line causes ghostscript to query which printer to
       ;; use - which you may not need if, for example, you only
