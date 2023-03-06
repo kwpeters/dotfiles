@@ -98,8 +98,12 @@ Import-Module posh-git
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\emodipt-extend.omp.json" | Invoke-Expression
 # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
-#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gruvbox.omp.json" | Invoke-Expression
-oh-my-posh init pwsh --config "$env:HOME\dev\kwp\dotfiles\powershell_7\oh-my-posh\kwp.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\gruvbox.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:HOME\dev\kwp\dotfiles\powershell_7\oh-my-posh\kwp.omp.json" | Invoke-Expression
+
+# Better way of initializing Oh My Posh.  This skirts issues they see with antivirus interfering oh-my-posh.
+& ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:HOME\dev\kwp\dotfiles\powershell_7\oh-my-posh\kwp.omp.json" --print) -join "`n"))
+
 
 # In order for the following to work, you need to a one-time install:
 # Install-Module -Name Terminal-Icons -Repository PSGallery
