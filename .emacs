@@ -779,6 +779,32 @@ same directory as the org-buffer and insert a link to this file."
   )
 
 
+(if (string-equal system-name "USSMAG174ZS3")
+    ;;--------------------------------------------------------------------
+    ;;
+    ;; Customizations specific to my my work Dell SDE desktop
+    ;;
+    ;;--------------------------------------------------------------------
+    (progn
+      (message "Running on Kevin's work SDE desktop")
+
+      ;;
+      ;; Setup the printer.
+      ;;
+      (setq ps-lpr-command "C:\\Program Files\\Ghostgum\\gsview\\gsprint.exe")
+
+      ;; This line causes ghostscript to query which printer to
+      ;; use - which you may not need if, for example, you only
+      ;; have one printer.
+      (setq ps-lpr-switches '("-query"))
+
+      (setq ps-printer-name t)
+
+      (setq ps-print-color-p t)
+      )
+  )
+
+
 ;;------------------------------------------------------------------------------
 ;; kwp-elem-complete
 ;;
