@@ -1,29 +1,6 @@
 #
-# Setup
+# PowerShell configuration for my Dell laptop.
 #
-# - Install PowerShell 7 from the Windows store.
-#
-# - Instead of copying this file to the location where pwsh.exe expects it to
-#   be, I prefer to create a symbolic link at that location, pointing to this
-#   file.  That way, changes can be made directly in the repo and I don't have
-#   to constantly copy this file when backing up and restoring.  To make the
-#   symbolic link, first figure out where pwsh.exe wants to find your config
-#   file.  In a pwsh.exe window run
-#     $profile
-#   Copy the output file path.
-#   Now run cmd.exe and issue the following command to create the symbolic link:
-#
-#   mklink <value_of_$profile> <path_to_this_file_within_local_cloned_repo>
-#
-#   For example: mklink C:\Users\kwpeters.RA-INT\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 c:\Users\kwpeters.RA-INT\dev\kwp\dotfiles\powershell_7\Microsoft.PowerShell_profile.ps1
-#
-# - In a PowerShell console, set your execution policy (if you haven't already):
-#     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
-#
-# - In an *admin* PowerShell console, install dependencies used in this file:
-#     Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
-#
-
 
 ################################################################################
 # Reloading Profile
