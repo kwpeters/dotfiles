@@ -21,7 +21,7 @@
   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
   ```
 
-- In an *admin* PowerShell console, install dependencies used in this file:
+- In an ***admin*** PowerShell console, install dependencies used in this file:
 
   ```powershell
   Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
