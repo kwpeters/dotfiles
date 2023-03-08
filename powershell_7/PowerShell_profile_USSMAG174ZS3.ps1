@@ -1,5 +1,5 @@
 #
-# PowerShell configuration for my Dell laptop.
+# PowerShell configuration for my Dell SDE tower.
 #
 
 ################################################################################
