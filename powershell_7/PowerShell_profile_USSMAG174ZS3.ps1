@@ -175,3 +175,10 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 Write-Output "Profile script loaded!"
+
+
+################################################################################
+# Settings for all machines
+################################################################################
+$commonProfileFile = Join-Path -Path $PSScriptRoot -ChildPath "PowerShell_profile_common.ps1"
+. $commonProfileFile
