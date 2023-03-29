@@ -11,5 +11,6 @@ if (![System.IO.File]::Exists($profileFilePath)) {
     Write-Error "$profileFilePath does not exist."
 }
 
+Write-Host "Loading $profileFilePath..."
 # Dot source the profile for this machine.
 . $profileFilePath
