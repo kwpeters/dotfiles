@@ -108,16 +108,6 @@ Set-Alias psadmin Enter-AdminPSSession
 
 
 ################################################################################
-# Personal Productivity
-################################################################################
-
-# function capcom {
-#     $scriptPath = Join-Path -Path $env:HOME -ChildPath "dev/kwp/juggernaut/capcom.py"
-#     python $scriptPath
-# }
-
-
-################################################################################
 # PATH environment variable
 ################################################################################
 
@@ -160,9 +150,17 @@ function Check-Path {
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
 
+################################################################################
+# Report repos with local work
+################################################################################
+
 # Give an overview of local work that has not been committed and pushed.
 # Commenting this out, because it is too slow and annoying.
 # localWork C:\Users\kwpeters\dev\
+
+################################################################################
+# Chocolatey
+################################################################################
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
@@ -174,7 +172,21 @@ if (Test-Path($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
 
-Write-Output "Profile script loaded!"
+
+################################################################################
+# Visual Studio Dev Shell
+#
+# Reference:
+# https://intellitect.com/blog/enter-vsdevshell-powershell/
+################################################################################
+
+$confirmation = Read-Host "Make this a Visual Studio developer shell? (y/n) "
+if ($confirmation -eq 'y') {
+    $vsInstallPath = &"C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vswhere.exe" -property installationpath
+    Import-Module (Join-Path $vsInstallPath "Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll")
+    Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation
+}
+
 
 
 ################################################################################
@@ -182,3 +194,5 @@ Write-Output "Profile script loaded!"
 ################################################################################
 $commonProfileFile = Join-Path -Path $PSScriptRoot -ChildPath "PowerShell_profile_common.ps1"
 . $commonProfileFile
+
+Write-Output "Profile script loaded!"
