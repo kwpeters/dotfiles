@@ -1019,3 +1019,4 @@ same directory as the org-buffer and insert a link to this file."
 ;; How to specify the control key, up and down
 ;; (global-set-key [(control down)] 'kwp-scroll-down)
 ;; (global-set-key [(control up)]   'kwp-scroll-up)
+(put 'narrow-to-region 'disabled nil)
