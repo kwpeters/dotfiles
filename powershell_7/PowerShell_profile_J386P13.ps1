@@ -50,6 +50,10 @@ function git-config-personal {
     git config user.name "Kevin Peters" && git config user.email "kwpeters@gmail.com"
 }
 
+function git-config-rok {
+    git config user.name "Kevin Peters" && git config user.email "kwpeters@rockwellautomation.com"
+}
+
 
 function git-clean {
     git clean -xfd -e .env
