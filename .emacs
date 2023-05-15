@@ -16,9 +16,10 @@
  '(ns-pop-up-frames nil)
  '(org-agenda-files
    '("/Users/kwpeters/SynologyDrive/Drive/home/data/todo.org" "/Users/kwpeters/SynologyDrive/Drive/home/data/home.org" "/Users/kwpeters/SynologyDrive/Drive/home/data/development-ideas.org"))
- '(org-startup-indented t)
  '(org-startup-folded t)
- '(package-selected-packages '(yasnippet undo-tree js2-mode expand-region dash))
+ '(org-startup-indented t)
+ '(package-selected-packages
+   '(multiple-cursors yasnippet undo-tree js2-mode expand-region dash))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
  '(show-paren-mode t)
@@ -54,8 +55,8 @@
 ;;                           ("marmalade" . "http://marmalade-repo.org/packages/")
 ;;                           ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-  (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+    (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                           ("melpa" . "http://melpa.org/packages/")))
 
   ; activate all the packages (in particular autoloads)
   (package-initialize)
@@ -290,11 +291,11 @@
 ;; multiple-cursors
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'multiple-cursors)
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1005,6 +1006,20 @@ same directory as the org-buffer and insert a link to this file."
 
 (global-set-key (kbd "C-a") 'beginning-of-line-or-indentation)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Advanced Table Support
+;; https://github.com/emacs-mirror/emacs/blob/master/lisp/textmodes/table.el
+;;
+;; Useful commands:
+;; table-insert
+;; table-split-cell-vertically
+;; table-split-cell-horizontally
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; I can't figure out how to get this to work within org-mode.
+;; (require 'table)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
