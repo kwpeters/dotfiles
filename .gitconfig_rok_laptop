@@ -4,7 +4,7 @@
 	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
 	longpaths = true
 [user]
-	email = kwpeters@gmail.com
+	email = kwpeters@ra.rockwell.com
 	name = Kevin Peters
 
 
