@@ -2,7 +2,11 @@
 
 ## Setup
 
-- Install PowerShell 7 from the Windows store.
+- Install PowerShell 7 by downloading the msi installer:
+  https://github.com/PowerShell/PowerShell/releases
+
+- The path to the installed PowerShell executable will be:
+  C:\Program Files\PowerShell\7\pwsh.exe
 
 - To keep my PowerShell configuration in this repo, I would *normally* symlink
   the to the config file within this repo.  Unfortunately, this does not work
