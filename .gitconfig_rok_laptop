@@ -47,3 +47,8 @@
 	sslbackend = schannel
 [credential "https://ragitlabegl4.ra.rockwell.com"]
 	provider = generic
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
