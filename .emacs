@@ -351,7 +351,7 @@
 (setq color-schemes (list
                      ;; (col-strip "a21d1d-5497de-8e35b7-ffff5b-56cb7d-df5252-707efa") ; red blue purple study
                      ;; (col-strip "2278bf-e15554-3bb273-507c6d-6e5775-598d91-7768ae") ; blue red green okay
-                     (col-strip "fb3640-1d3557-04a777-653fc4-8fbfe0-465362")
+                     (col-strip "1d3557-04a777-653fc4-8fbfe0-465362-fb3640")
                      (col-strip "2278bf-e15554-3bb273-507c6d-6e5775-598d91-7768ae")
                      ))
 (setq pick-color 0)
