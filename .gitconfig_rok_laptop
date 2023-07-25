@@ -48,7 +48,7 @@
 [credential "https://ragitlabegl4.ra.rockwell.com"]
 	provider = generic
 [difftool "sourcetree"]
-	cmd = "'' "
+	cmd = 'C:/Users/kwpeters/AppData/Local/Programs/Microsoft VS Code/code.exe' --diff --wait -n \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
-	cmd = "'' "
+	cmd = 'C:/Users/kwpeters/AppData/Local/Programs/Microsoft VS Code/code.exe' -n --wait \"$MERGED\"
 	trustExitCode = true
