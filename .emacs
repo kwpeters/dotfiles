@@ -344,51 +344,30 @@
 ;; https://coolors.co/fb3640-6690cc-04a777-653fc4-8fbfe0-465362
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; fb3640-1d3557-04a777-653fc4-8fbfe0
-
-(defun col-strip (col-str)
-  (butlast (split-string (mapconcat (lambda (x) (concat "#" x " "))
-                                    (split-string col-str "-")
-                                    "") " ")))
-
-(setq color-schemes (list
-                     (col-strip "1d3557-04a777-653fc4-8fbfe0-465362-fb3640")
-                     (col-strip "2278bf-e15554-3bb273-507c6d-6e5775-598d91-7768ae")
-                     ))
-(setq pick-color 0)
- (setq color-theme (nth pick-color color-schemes))
-
 (set-face-attribute 'org-level-1 nil
-                    ;; :height 1.2
-                    :foreground (nth 0 color-theme))
+                    :height 1.2
+                    :foreground "#fb3640")
 (set-face-attribute 'org-level-2 nil
                     :height 1.2
-                    :foreground (nth 1 color-theme))
+                    :foreground "#6690cc")
 (set-face-attribute 'org-level-3 nil
                     :height 1.2
-                    :foreground (nth 2 color-theme))
+                    :foreground "#04a777")
 (set-face-attribute 'org-level-4 nil
                     :height 1.2
-                    :foreground (nth 3 color-theme))
+                    :foreground "#653fc4")
 (set-face-attribute 'org-level-5 nil
                     :height 1.2
-                    :foreground (nth 4 color-theme))
+                    :foreground "#ee8434")
 (set-face-attribute 'org-level-6 nil
                     :height 1.2
-                    :foreground (nth 5 color-theme))
+                    :foreground "#465362")
 (set-face-attribute 'org-level-7 nil
                     :height 1.2
-                    :foreground (nth 6 color-theme))
+                    :foreground "fb3640")
 (set-face-attribute 'org-level-8 nil
                     :height 1.2
-                    :foreground (nth 7 color-theme))
-(set-face-attribute 'org-level-9 nil
-                    :height 1.2
-                    :foreground (nth 8 color-theme))
-(set-face-attribute 'org-level-10 nil
-                    :height 1.2
-                    :foreground (nth 9 color-theme))
+                    :foreground "#6690cc")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
