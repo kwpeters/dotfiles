@@ -152,7 +152,7 @@ function Check-Path {
 # When adding PowerShellScripts to PATH, make sure it comes before
 # C:\Program Files\Git\usr\bin, because the two contain commands that overlap.
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
-Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
+Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\monorail\\snapshot\\.bin"
 
 ################################################################################
 # Report repos with local work
