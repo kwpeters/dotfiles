@@ -1,0 +1,61 @@
+[core]
+	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" -n --wait
+    autocrlf = true
+	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
+	longpaths = true
+[user]
+	email = kwpeters@ra.rockwell.com
+	name = Kevin Peters
+
+
+################################################################################
+# Diffing
+################################################################################
+[diff]
+    tool = vscode
+
+[difftool]
+  prompt = false
+
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = false
+
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
+
+################################################################################
+# Merging
+################################################################################
+[merge]
+    tool = code
+
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = false
+
+[mergetool "code"]
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+################################################################################
+
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
+	lg = log --pretty=oneline --graph --decorate --all
+[http]
+    sslVerify = false
+    sslbackend = schannel
+[credential "https://ragitlabegl4.ra.rockwell.com"]
+	provider = generic
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[difftool "sourcetree"]
+	cmd = 'C:/Users/kwpeters/AppData/Local/Programs/Microsoft VS Code/code.exe' --diff --wait -n \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = 'C:/Users/kwpeters/AppData/Local/Programs/Microsoft VS Code/code.exe' -n --wait \"$MERGED\"
+	trustExitCode = true
