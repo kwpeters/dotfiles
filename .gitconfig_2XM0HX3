@@ -46,8 +46,6 @@
 [http]
     sslVerify = false
     sslbackend = schannel
-[credential "https://ragitlabegl4.ra.rockwell.com"]
-	provider = generic
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -59,3 +57,7 @@
 [mergetool "sourcetree"]
 	cmd = 'C:/Users/kwpeters/AppData/Local/Programs/Microsoft VS Code/code.exe' -n --wait \"$MERGED\"
 	trustExitCode = true
+[credential "https://ragitlabegl1.ra.rockwell.com"]
+	provider = generic
+[credential "https://ragitlabegl4.ra.rockwell.com"]
+	provider = generic
