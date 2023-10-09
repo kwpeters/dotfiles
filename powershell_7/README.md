@@ -39,6 +39,13 @@
   as soon as OneDrive syncs, you should have the basic launcher script mentioned
   previously.
 
+
+  To update the common launcher script, from the root of this repo, run:
+
+  ```powershell
+  cp .\powershell_7\PowerShell_profile_common.ps1 'C:\Users\kwpeters\OneDrive - Rockwell Automation, Inc\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'
+  ```
+
 ## Other Setup
 - In a PowerShell console, set your execution policy (if you haven't already):
 
