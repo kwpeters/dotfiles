@@ -1,14 +1,12 @@
 [core]
-	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --wait
-	autocrlf = true
+	editor = \"C:\\Program Files\\Microsoft VS Code\\Code.exe\" -n --wait
+    autocrlf = true
 	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
 	longpaths = true
 [user]
 	email = kwpeters@ra.rockwell.com
 	name = Kevin Peters
 
-[color]
-    ui = auto
 
 ################################################################################
 # Diffing
@@ -42,22 +40,24 @@
 
 ################################################################################
 
-[credential "https://ragitlabegl4.ra.rockwell.com"]
-	provider = gitlab
-
 [alias]
 	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
 	lg = log --pretty=oneline --graph --decorate --all
-[difftool "sourcetree"]
-	cmd = "'' "
-[mergetool "sourcetree"]
-	cmd = "'' "
-	trustExitCode = true
-
 [http]
-        sslVerify = true
+    sslVerify = true
+    sslbackend = schannel
 [filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[difftool "sourcetree"]
+	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' --diff --wait -n \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' -n --wait \"$MERGED\"
+	trustExitCode = true
+[credential "https://ragitlabegl1.ra.rockwell.com"]
+	provider = generic
+[credential "https://ragitlabegl4.ra.rockwell.com"]
+	provider = gitlab

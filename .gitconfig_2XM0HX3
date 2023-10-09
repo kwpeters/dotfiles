@@ -44,7 +44,7 @@
 	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
 	lg = log --pretty=oneline --graph --decorate --all
 [http]
-    sslVerify = false
+    sslVerify = true
     sslbackend = schannel
 [filter "lfs"]
     clean = git-lfs clean -- %f
