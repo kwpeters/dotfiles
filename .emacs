@@ -368,11 +368,12 @@
                     :foreground "#f18f01")
 (set-face-attribute 'org-level-7 nil
                     :height 1.2
-                    :foreground "6690cc")
+                    :foreground "#6690cc")
 (set-face-attribute 'org-level-8 nil
                     :height 1.2
                     :foreground "#653fc4")
 
+;; Note: The face org-level-9 does not exist.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
