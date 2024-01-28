@@ -125,6 +125,7 @@
         shell-mode-hook
         eshell-mode-hook
         artist-mode-hook
+        calendar-mode-hook
         Buffer-menu-mode-hook
         )
 )
