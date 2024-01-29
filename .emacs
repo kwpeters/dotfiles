@@ -14,6 +14,7 @@
  '(inhibit-startup-screen t)
  '(line-spacing 1)
  '(ns-pop-up-frames nil)
+ '(org-indent-indentation-per-level 4)
  '(org-startup-folded t)
  '(org-startup-indented t)
  '(package-selected-packages
@@ -201,14 +202,16 @@
  ;;   It gets confusing when headings also use those colors.
  ;; - The face org-level-9 does not exist. Org-mode repeats the set of 8.
  ;;
- '(org-level-1 ((t (:height 1.2 :weight extra-bold :foreground "#6690cc"))))
- '(org-level-2 ((t (:height 1.2 :weight extra-bold :foreground "#653fc4"))))
- '(org-level-3 ((t (:height 1.2 :weight extra-bold :foreground "#f18f01"))))
- '(org-level-4 ((t (:height 1.2 :weight extra-bold :foreground "#97b29e"))))
- '(org-level-5 ((t (:height 1.2 :weight extra-bold :foreground "#6690cc"))))
- '(org-level-6 ((t (:height 1.2 :weight extra-bold :foreground "#653fc4"))))
- '(org-level-7 ((t (:height 1.2 :weight extra-bold :foreground "#f18f01"))))
- '(org-level-8 ((t (:height 1.2 :weight extra-bold :foreground "#6d3d14"))))
+ '(org-level-1 ((t (:height 1.2 :weight extra-bold :foreground "#442a87"))))
+ '(org-level-2 ((t (:height 1.2 :weight extra-bold :foreground "#1763af"))))
+ '(org-level-3 ((t (:height 1.2 :weight extra-bold :foreground "#442a87"))))
+ '(org-level-4 ((t (:height 1.2 :weight extra-bold :foreground "#1763af"))))
+ '(org-level-5 ((t (:height 1.2 :weight extra-bold :foreground "#442a87"))))
+ '(org-level-6 ((t (:height 1.2 :weight extra-bold :foreground "#1763af"))))
+ '(org-level-7 ((t (:height 1.2 :weight extra-bold :foreground "#442a87"))))
+ '(org-level-8 ((t (:height 1.2 :weight extra-bold :foreground "#1763af"))))
+ '(org-level-9 ((t (:height 1.2 :weight extra-bold :foreground "#442a87"))))
+ '(org-level-10 ((t (:height 1.2 :weight extra-bold :foreground "#1763af"))))
 )
 
 
