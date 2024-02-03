@@ -459,8 +459,10 @@ same directory as the org-buffer and insert a link to this file."
 ;; Default todo states for org mode
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (setq org-todo-keywords
+;;       '((sequence "TODO" "INPROGRESS" "WAITING" "DELEGATED-FOLLOWUP" "|" "DONE" "CANCELLED" "DELEGATED-DONE")))
 (setq org-todo-keywords
-  '((sequence "TODO" "INPROGRESS" "WAITING" "DELEGATED-FOLLOWUP" "|" "DONE" "CANCELLED" "DELEGATED-DONE")))
+  '((sequence "NEXT(n)" "TODO(t)"  "WAITING(w)" "PROJ(p)" "SOMEDAY(s)" "REPEAT(r)" "|" "DONE(d)" "CANCELLED(c)")))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -557,6 +559,7 @@ same directory as the org-buffer and insert a link to this file."
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+(add-hook 'org-mode-hook 'turn-on-flyspell)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1082,25 +1085,13 @@ same directory as the org-buffer and insert a link to this file."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; flyspell
 
-;; Install Chocolately:
-;;
-;; https://chocolatey.org/install
-;;
-;; Use Chocolatey to install hunspell.portable:
-;; choco install hunspell.portable
-;;
-;; This will install hunspell.exe to:
-;; C:\ProgramData\chocolatey\bin\hunspell.exe
-;; (concat dropbox-folder "appdata/emacs/kwp-yasnippets/my-snippets")
-
-
 ;; These setup steps were gotten from the following post:
 ;;     https://www.reddit.com/r/emacs/comments/dgj0ae/tutorial_spellchecking_with_hunspell_170_for/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 ;; ... with some parts stolen from this post:
 ;;     https://www.reddit.com/r/emacs/comments/8by3az/comment/dxaqdsd/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 
 ;; 1. Make sure cloud sync is working, because the hunspell.exe
-;;    executable and dictionary exist there.
+;;    executable and dictionary exist there (see specific paths below).
 ;; 2. Set the following absolute path to something like:
 ;;    C:\Users\kwpeters\SynologyDrive\Drive\home\appdata\emacs\hunspelldictionary
 ;;    I'm not sure why I am not able to use a variable here.
@@ -1119,7 +1110,6 @@ same directory as the org-buffer and insert a link to this file."
 (setq hunspell-aff (concat dropbox-folder "appdata/emacs/hunspelldictionary/en_US.aff"))
 (setq ispell-hunspell-dict-paths-alist
       '(("en_US" "C:/Users/kwpeters/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
-
 
 (setq ispell-local-dictionary "en_US")
 (setq ispell-local-dictionary-alist
