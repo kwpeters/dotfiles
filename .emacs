@@ -21,11 +21,16 @@
       nil)
      ("K" "Kevin's custom org view"
       ((agenda "" nil)
+       (tags-todo "TODO=\"WAITING\"" nil)
        (tags-todo "TODO=\"NEXT\"" nil)
        (tags-todo "TODO=\"TODO\"" nil))
       nil nil)))
+ '(org-agenda-start-on-weekday nil)
  '(org-agenda-start-with-follow-mode t)
  '(org-indent-indentation-per-level 4)
+ '(org-log-done 'time)
+ '(org-log-into-drawer t)
+ '(org-log-reschedule 'time)
  '(org-startup-folded t)
  '(org-startup-indented t)
  '(package-selected-packages
@@ -349,6 +354,19 @@
 ;;                        (concat org-agendas-folder "development-ideas.org")
                        )
       )
+;;
+;; Customize org-mode captures
+;;
+
+;; The file that will receive the new entry
+(setq org-capture-target-file (concat dropbox-folder "data/todo.org"))
+
+;; Configure the capture templates
+(setq org-capture-templates
+ '(("w" "Work templates")
+   ("wt" "TODO entry" entry
+    (file+headline org-capture-target-file "Capture")
+    (file "~/dev/kwp/dotfiles/emacs/org_template_todo.txt" ))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -356,23 +374,6 @@
    (js . t))
  )
 
-;; Note: Heading faces (color, weight, etc.) are set in the
-;; one-and-only custom-set-faces found at the beginning of this file.
-;;
-;; For future reference, faces can also be customized as in the following example:
-;;
-;; (set-face-attribute 'org-level-1 nil
-;;                     :height 1.2
-;;                     :foreground "#6690cc")
-;; (set-face-attribute 'org-level-2 nil
-;;                     :height 1.2
-;;                     :foreground "#653fc4")
-;; (set-face-attribute 'org-level-3 nil
-;;                     :height 1.2
-;;                     :foreground "#f18f01")
-;; (set-face-attribute 'org-level-4 nil
-;;                     :height 1.2
-;;                     :foreground "#f18f01")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -833,6 +834,32 @@ same directory as the org-buffer and insert a link to this file."
     ;;--------------------------------------------------------------------
     (progn
       (message "Running on Kevin's work SDE desktop")
+
+      ;;
+      ;; Setup the printer.
+      ;;
+      (setq ps-lpr-command "C:\\Program Files\\Ghostgum\\gsview\\gsprint.exe")
+
+      ;; This line causes ghostscript to query which printer to
+      ;; use - which you may not need if, for example, you only
+      ;; have one printer.
+      (setq ps-lpr-switches '("-query"))
+
+      (setq ps-printer-name t)
+
+      (setq ps-print-color-p t)
+      )
+  )
+
+
+(if (string-equal system-name "2XM0HX3")
+    ;;--------------------------------------------------------------------
+    ;;
+    ;; Customizations specific to my my work Dell SDE desktop
+    ;;
+    ;;--------------------------------------------------------------------
+    (progn
+      (message "Running on Kevin's work laptop")
 
       ;;
       ;; Setup the printer.
