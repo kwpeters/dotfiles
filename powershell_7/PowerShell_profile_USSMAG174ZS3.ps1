@@ -63,7 +63,7 @@ Import-Module posh-git
 
 # # In the prompt, replace the home directory path with "~".
 # $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-# # Change the default prompt color ot orange.
+# # Change the default prompt color to orange.
 # $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 # # Insert a newline before the prompt suffix.
 # $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
@@ -158,11 +158,19 @@ function Check-Path {
 # When adding PowerShellScripts to PATH, make sure it comes before
 # C:\Program Files\Git\usr\bin, because the two contain commands that overlap.
 Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
-Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
+Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\monorail\\snapshot\\.bin"
+
+################################################################################
+# Report repos with local work
+################################################################################
 
 # Give an overview of local work that has not been committed and pushed.
 # Commenting this out, because it is too slow and annoying.
 # localWork C:\Users\kwpeters\dev\
+
+################################################################################
+# Chocolatey
+################################################################################
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
@@ -174,7 +182,40 @@ if (Test-Path($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
 
-Write-Output "Profile script loaded!"
+
+################################################################################
+# Visual Studio Dev Shell
+#
+# Reference:
+# https://intellitect.com/blog/enter-vsdevshell-powershell/
+################################################################################
+
+function devShell {
+
+    # See if vswhere.exe is installed.  It will be used to locate the Visual
+    # Studio installation directory.
+    $vsWhereFilePath = Join-Path ${Env:ProgramFiles(x86)} "Microsoft Visual Studio\\Installer\\vswhere.exe"
+    if (![System.IO.File]::Exists($vsWhereFilePath)) {
+        Write-Error "Cannot find vswhere.  $vsWhereFilePath does not exist."
+        return
+    }
+
+    # Invoke vswhere.exe to get the installation path.
+    $vsInstallPath = &"$vsWhereFilePath" -property installationpath
+    Write-Host "Visual Studio install location: $vsInstallPath"
+
+    # Build the path to the dev shell PowerShell module.
+    $moduleFilePath = Join-Path $vsInstallPath "Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll"
+    if (![System.IO.File]::Exists($moduleFilePath)) {
+        Write-Error "Cannot find Microsoft.VisualStudio.DevShell.dll.  $moduleFilePath does not exist."
+        return
+    }
+
+    # Import the PowerShell module.
+    Import-Module (Join-Path $vsInstallPath "Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll")
+    # Enter the dev shell.
+    Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation
+}
 
 
 ################################################################################
@@ -182,3 +223,44 @@ Write-Output "Profile script loaded!"
 ################################################################################
 $commonProfileFile = Join-Path -Path $PSScriptRoot -ChildPath "PowerShell_profile_common.ps1"
 . $commonProfileFile
+
+Write-Output "Profile script loaded!"
+
+
+################################################################################
+# Examples
+################################################################################
+
+#
+# An example of how to prompt the user by reading a line of input.
+#
+
+# $input = Read-Host "Make this a Visual Studio developer shell? (y/n) "
+# if ($input -eq 'y') {
+#     # Do something
+# }
+
+#
+# An example of how to write text without the trailing newline.
+#
+
+# Write-Host -NoNewline "Continue? (y/n)"
+
+#
+# An example of waiting for a key press.
+#
+
+# $allowed = 89, 78
+# do {
+#     $keyInfo = $Host.UI.RawUI.ReadKey("NoEcho, IncludeKeyDown")
+#     # Write-Host $keyInfo.VirtualKeyCode
+# } while (
+#     -not ($allowed -contains $keyInfo.VirtualKeyCode)
+# )
+# Write-Host ""
+#
+# if ($keyInfo.VirtualKeyCode -eq 89) {
+#     $vsInstallPath = &"C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vswhere.exe" -property installationpath
+#     Import-Module (Join-Path $vsInstallPath "Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll")
+#     Enter-VsDevShell -VsInstallPath $vsInstallPath -SkipAutomaticLocation
+# }
