@@ -34,7 +34,7 @@
  '(org-startup-folded t)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(org multiple-cursors yasnippet undo-tree js2-mode expand-region dash))
+   '(ace-jump-mode org multiple-cursors yasnippet undo-tree js2-mode expand-region dash))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
  '(show-paren-mode t)
@@ -293,9 +293,9 @@
 ;; don't like it.
 ;;(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;; (define-key global-map (kbd "C-; w") 'ace-jump-mode)
-;; (define-key global-map (kbd "C-; c") 'ace-jump-char-mode)
-;; (define-key global-map (kbd "C-; l") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-; w") 'ace-jump-mode)
+(define-key global-map (kbd "C-; c") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-; l") 'ace-jump-line-mode)
 
 ;; Needed for ace-jump-mode
 ;; http://stackoverflow.com/questions/10105123/eval-when-compile-not-being-honored
@@ -365,7 +365,7 @@
 (setq org-capture-templates
  '(("w" "Work templates")
    ("wt" "TODO entry" entry
-    (file+headline org-capture-target-file "Capture")
+    (file+headline org-capture-target-file "Inbox")
     (file "~/dev/kwp/dotfiles/emacs/org_template_todo.txt" ))))
 
 (org-babel-do-load-languages
@@ -428,9 +428,11 @@ same directory as the org-buffer and insert a link to this file."
         (if (eq system-type 'windows-nt)
             (call-process "C:/Program Files (x86)/Corel/Corel Paint Shop Pro X/Paint Shop Pro X.exe" nil nil nil filename))
       )
-    )
   )
-;; (setq org-startup-with-inline-images t)
+)
+
+;; Turn on inline images by default.
+(setq org-startup-with-inline-images t)
 
 
 (defun kwp-sharex-screenshot ()
@@ -1149,5 +1151,10 @@ same directory as the org-buffer and insert a link to this file."
 
 ;; ispell-word for showing correcting options of the current misspelled word
 (global-set-key (kbd "M-\\") 'ispell-word)
+
+;; Remove the C-; keybinding that flyspell creates.
+(eval-after-load "flyspell"
+  '(define-key flyspell-mode-map (kbd "C-;") nil))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
