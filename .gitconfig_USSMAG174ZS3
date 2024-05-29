@@ -54,10 +54,17 @@
 
 [difftool "sourcetree"]
 	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' --diff --wait -n \"$LOCAL\" \"$REMOTE\"
+
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepBackup = false
+
 [mergetool "sourcetree"]
 	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' -n --wait \"$MERGED\"
 	trustExitCode = true
+
 [credential "https://ragitlabegl1.ra.rockwell.com"]
 	provider = generic
+
 [credential "https://ragitlabegl4.ra.rockwell.com"]
 	provider = gitlab
