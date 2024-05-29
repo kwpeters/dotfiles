@@ -1,17 +1,14 @@
-//
-// See README.md for installation instructions.
-//
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -23,7 +20,7 @@
             "keys": "ctrl+v"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -37,20 +34,20 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialCols": 100,
     "initialRows": 50,
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "antialiasingMode": "cleartype",
             "closeOnExit": "graceful",
             "cursorShape": "vintage",
-            "font":
+            "font": 
             {
                 "face": "MesloLGM NF",
                 "size": 9.0
@@ -58,7 +55,7 @@
             "historySize": 9001,
             "snapOnInput": true
         },
-        "list":
+        "list": 
         [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -92,34 +89,26 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu - wsl",
+                "source": "Windows.Terminal.Wsl"
             },
             {
-                "guid": "{e89cf2bf-f4fb-54c1-a103-7121bdaa96c4}",
+                "guid": "{1aa6b555-c9e5-5283-b1df-7d4f5ccc99e9}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{323bc805-436f-5fd6-8596-1d6bf94faee8}",
+                "guid": "{756ae415-1dac-5acd-b5f6-fc723de5dbe3}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
-                "guid": "{56aeeab1-6350-57e4-bab9-e25fa16a0f58}",
-                "hidden": false,
                 "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu - wsl",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
@@ -353,31 +342,31 @@
         }
     ],
     "theme": "dark",
-    "themes":
+    "themes": 
     [
         {
             "name": "legacyDark",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "dark",
                 "useMica": false
-}
+            }
         },
         {
             "name": "legacyLight",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "light",
                 "useMica": false
@@ -385,13 +374,13 @@
         },
         {
             "name": "legacySystem",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "system",
                 "useMica": false
