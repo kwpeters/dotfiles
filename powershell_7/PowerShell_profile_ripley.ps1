@@ -1,5 +1,5 @@
 #
-# PowerShell configuration for my Dell laptop.
+# PowerShell configuration for my Lenovo Ideapad 5 laptop.
 #
 
 ################################################################################
@@ -50,11 +50,6 @@ function git-config-personal {
     git config user.name "Kevin Peters" && git config user.email "kwpeters@gmail.com"
 }
 
-function git-config-rok {
-    git config user.name "Kevin Peters" && git config user.email "kwpeters@rockwellautomation.com"
-}
-
-
 function git-clean {
     git clean -xfd -e .env
 }
@@ -67,7 +62,7 @@ Import-Module posh-git
 
 # # In the prompt, replace the home directory path with "~".
 # $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-# # Change the default prompt color ot orange.
+# # Change the default prompt color to orange.
 # $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 # # Insert a newline before the prompt suffix.
 # $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
@@ -151,8 +146,8 @@ function Check-Path {
 
 # When adding PowerShellScripts to PATH, make sure it comes before
 # C:\Program Files\Git\usr\bin, because the two contain commands that overlap.
-Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\PowerShellScripts"
-Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
+Check-Path -Dir "C:\\Users\\kwpet\\dev\\kwp\\PowerShellScripts"
+Check-Path -Dir "C:\\Users\\kwpet\\dev\\kwp\\monorail\\monorail\\snapshot\\.bin"
 
 ################################################################################
 # Report repos with local work
@@ -160,7 +155,7 @@ Check-Path -Dir "C:\\Users\\kwpeters\\dev\\kwp\\tewl\\clitools\\dist-saved\\src"
 
 # Give an overview of local work that has not been committed and pushed.
 # Commenting this out, because it is too slow and annoying.
-# localWork C:\Users\kwpeters\dev\
+# localWork C:\Users\kwpet\dev\
 
 ################################################################################
 # Chocolatey
@@ -224,7 +219,8 @@ $commonProfileFile = Join-Path -Path $PSScriptRoot -ChildPath "PowerShell_profil
 ################################################################################
 
 # Directory containing all development Git repositories.
-$env:GIT_REPO_ROOT_DIR = "C:\Users\kwpeters\dev"
+$env:GIT_REPO_ROOT_DIR = "C:\Users\kwpet\dev"
+
 
 
 
@@ -232,6 +228,7 @@ $env:GIT_REPO_ROOT_DIR = "C:\Users\kwpeters\dev"
 # Done.
 #
 Write-Output "Profile script loaded!"
+
 
 ################################################################################
 # Examples

@@ -218,6 +218,20 @@ function devShell {
 $commonProfileFile = Join-Path -Path $PSScriptRoot -ChildPath "PowerShell_profile_common.ps1"
 . $commonProfileFile
 
+
+################################################################################
+# Environment variables only needed in PowerShell
+################################################################################
+
+# Directory containing all development Git repositories.
+$env:GIT_REPO_ROOT_DIR = "C:\Users\kwpeters\dev"
+
+
+
+
+#
+# Done.
+#
 Write-Output "Profile script loaded!"
 
 
