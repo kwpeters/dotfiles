@@ -6,7 +6,7 @@
 - You can get PowerShell 7 from the Windows Store or from the following web page:
   https://github.com/PowerShell/powershell/releases
 
-  I prefer to get it from the web page.
+  I prefer to get it from the web page.  There are a lot of artifacts for each release.  Look for the one that ends with `-win-x64.msi`.
 
 - The path to the installed PowerShell executable will be:
   C:\Program Files\PowerShell\7\pwsh.exe
