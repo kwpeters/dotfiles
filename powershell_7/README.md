@@ -1,10 +1,9 @@
 # PowerShell Core (multiplatform)
 
-
 ## Installation
 
 - You can get PowerShell 7 from the Windows Store or from the following web page:
-  https://github.com/PowerShell/powershell/releases
+  <https://github.com/PowerShell/powershell/releases>
 
   I prefer to get it from the web page.  There are a lot of artifacts for each release.  Look for the one that ends with `-win-x64.msi`.
 
@@ -46,6 +45,7 @@
   ```
 
 ## Other Setup
+
 - In a PowerShell console, set your execution policy (if you haven't already):
 
   ```powershell
