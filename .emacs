@@ -34,7 +34,7 @@
  '(org-startup-folded t)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(ace-jump-mode org multiple-cursors yasnippet undo-tree js2-mode expand-region dash))
+   '(ace-jump-mode org multiple-cursors yasnippet js2-mode expand-region dash))
  '(ps-line-number t)
  '(set-mark-command-repeat-pop t)
  '(show-paren-mode t)
@@ -64,7 +64,6 @@
       expand-region
       dash
       js2-mode
-      undo-tree
       yasnippet))
 
   ; List the repositories containing them.
@@ -886,6 +885,32 @@ same directory as the org-buffer and insert a link to this file."
   )
 
 
+(if (string-equal system-name "ripley")
+    ;;--------------------------------------------------------------------
+    ;;
+    ;; Customizations specific to my my personal laptop
+    ;;
+    ;;--------------------------------------------------------------------
+    (progn
+      (message "Running on Ripley")
+
+      ;;
+      ;; Setup the printer.
+      ;;
+      (setq ps-lpr-command "C:\\Program Files\\Ghostgum\\gsview\\gsprint.exe")
+
+      ;; This line causes ghostscript to query which printer to
+      ;; use - which you may not need if, for example, you only
+      ;; have one printer.
+      (setq ps-lpr-switches '("-query"))
+
+      (setq ps-printer-name t)
+
+      (setq ps-print-color-p t)
+      )
+  )
+
+
 ;;------------------------------------------------------------------------------
 ;; kwp-elem-complete
 ;;
@@ -1150,6 +1175,14 @@ same directory as the org-buffer and insert a link to this file."
     (setq ispell-hunspell-dict-paths-alist
       '(("en_US" "C:/Users/kwpeters/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
 )
+
+;; Override the above when on ripley, because user folder is named "kwpet".
+(if (string-equal system-name "ripley")
+  (setq ispell-hunspell-dict-paths-alist
+    '(("en_US" "C:/Users/kwpet/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
+)
+
+
 
 (setq ispell-local-dictionary "en_US")
 (setq ispell-local-dictionary-alist

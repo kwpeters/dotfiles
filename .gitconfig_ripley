@@ -1,0 +1,37 @@
+[core]
+	editor = \"C:\\Program Files\\Microsoft VS Code\\code.exe\" -n --wait
+	autocrlf = true
+	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
+	longpaths = true
+[user]
+	email = kwpeters@gmail.com
+	name = Kevin Peters
+
+
+################################################################################
+# Diffing
+################################################################################
+[diff]
+    tool = vscode
+
+[difftool]
+  prompt = false
+
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
+
+################################################################################
+# Merging
+################################################################################
+[merge]
+    tool = code
+
+[mergetool "code"]
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+################################################################################
+
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
+	lg = log --pretty=oneline --graph --decorate --all
