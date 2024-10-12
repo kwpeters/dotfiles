@@ -17,3 +17,5 @@ function Run-WindowsSpotlightImages {
 
 # Allow PlantUML to create *really* large images.
 $env:PLANTUML_LIMIT_SIZE = 8192
+
+$env:NODE_OPTIONS = "--max-old-space-size=4096"
