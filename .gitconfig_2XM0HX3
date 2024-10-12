@@ -1,6 +1,6 @@
 [core]
 	editor = \"C:\\Users\\kwpeters\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" -n --wait
-    autocrlf = true
+	autocrlf = true
 	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
 	longpaths = true
 [user]

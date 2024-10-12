@@ -95,6 +95,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq dropbox-folder (file-name-as-directory (getenv "CLOUDHOME")))
 
+(setq is-work-pc (string= (getenv "WORK_PC") "1"))
+
+(if is-work-pc
+    (message "Running on a work PC.")
+    (message "Running on a personal PC."))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -1160,16 +1166,23 @@ same directory as the org-buffer and insert a link to this file."
 (setenv "LANG" "en_US")
 
 ;; todo: For some reason the below variable does not work for me and instead the absolute
-;; path must be used on the subsequent line.
+;; path must be used on the subsequent lines.
 (setq hunspell-aff (concat dropbox-folder "appdata/emacs/hunspelldictionary/en_US.aff"))
 
-
-(if (string-equal system-name "ripley")
+(if is-work-pc
     (setq ispell-hunspell-dict-paths-alist
-         '(("en_US" "C:/Users/kwpet/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
+      '(("en_US" "C:/Users/kwpeters/OneDrive - Rockwell Automation, Inc/home/appdata/emacs/hunspelldictionary/en_US.aff")))
+    (setq ispell-hunspell-dict-paths-alist
+      '(("en_US" "C:/Users/kwpeters/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
+)
+
+;; Override the above when on ripley, because user folder is named "kwpet".
+(if (string-equal system-name "ripley")
   (setq ispell-hunspell-dict-paths-alist
-        '(("en_US" "C:/Users/kwpeters/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
-    )
+    '(("en_US" "C:/Users/kwpet/SynologyDrive/Drive/home/appdata/emacs/hunspelldictionary/en_US.aff")))
+)
+
+
 
 (setq ispell-local-dictionary "en_US")
 (setq ispell-local-dictionary-alist
