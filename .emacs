@@ -451,7 +451,7 @@ same directory as the org-buffer and insert a link to this file."
                   (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
   (unless (file-exists-p (file-name-directory filename))
     (make-directory (file-name-directory filename)))
-  (call-process "copyLatestShareXImg.cmd" nil nil nil filename)
+  (call-process "copy-latest-sharex-img.cmd" nil nil nil filename)
 
   ; insert into file if correctly taken
   (if (file-exists-p filename)
