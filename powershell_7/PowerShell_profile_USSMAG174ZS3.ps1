@@ -36,7 +36,7 @@ function ls {
 
 function ls-mod {
     # List directory and sort so that most recently modified items are first.
-    Get-ChildItem | Sort-Object -Descending LastWriteTime
+    Get-ChildItem | Sort-Object LastWriteTime
 }
 
 
