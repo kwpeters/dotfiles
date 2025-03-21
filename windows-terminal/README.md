@@ -25,10 +25,21 @@ I prefer to create a symbolic link at this location, pointing into this Git repo
 **Note:**
 If Windows Terminal is running, it will periodically check for the
 existence of a config file and create one if it is missing.  So you
-may want to do the above steps all in one command:
+may want to do the above steps in cmd.exe and all at once:
 
 In an **admin** cmd.exe:
 
-```
-del %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && mklink %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json c:\users\kwpeters\dev\kwp\dotfiles\windows-terminal\settings-<machinename>.json
-```
+1. Make a backup of the existing settings file:
+
+   ```cmd
+   copy %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json.bak
+   ```
+
+2. Create the link:
+
+   ```cmd
+   del %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && mklink %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json c:\users\kwpeters\dev\kwp\dotfiles\windows-terminal\settings-<machinename>.json
+   ```
+
+3. Install the nerd font specified in the Windows Terminal settings.
+   This is currently `Meslo Nerd`.
