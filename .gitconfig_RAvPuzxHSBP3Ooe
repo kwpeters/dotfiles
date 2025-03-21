@@ -1,0 +1,70 @@
+[core]
+	editor = \"C:\\Program Files\\Microsoft VS Code\\Code.exe\" -n --wait
+    autocrlf = true
+	excludesfile = %USERPROFILE%\\dev\\kwp\\dotfiles\\.gitignore_global
+	longpaths = true
+[user]
+	email = kwpeters@ra.rockwell.com
+	name = Kevin Peters
+
+
+################################################################################
+# Diffing
+################################################################################
+[diff]
+    tool = vscode
+
+[difftool]
+  prompt = false
+
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = false
+
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
+
+################################################################################
+# Merging
+################################################################################
+[merge]
+    tool = code
+
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = false
+
+[mergetool "code"]
+  cmd = code --new-window --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+################################################################################
+
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset %s%d [%an]' --graph --date=short --all --color
+	lg = log --pretty=oneline --graph --decorate --all
+[http]
+    sslVerify = true
+    sslbackend = schannel
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[difftool "sourcetree"]
+	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' --diff --wait -n \"$LOCAL\" \"$REMOTE\"
+
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepBackup = false
+
+[mergetool "sourcetree"]
+	cmd = 'C:/Program Files/Microsoft VS Code/Code.exe' -n --wait \"$MERGED\"
+	trustExitCode = true
+
+[credential "https://ragitlabegl1.ra.rockwell.com"]
+	provider = generic
+
+[credential "https://ragitlabegl4.ra.rockwell.com"]
+	provider = gitlab
