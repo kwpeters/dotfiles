@@ -30,5 +30,5 @@ may want to do the above steps all in one command:
 In an **admin** cmd.exe:
 
 ```
-del %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && mklink %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json c:\users\kwpet\dev\kwp\dotfiles\windows-terminal\settings-<machinename>.json
+del %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && mklink %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json c:\users\kwpeters\dev\kwp\dotfiles\windows-terminal\settings-<machinename>.json
 ```
