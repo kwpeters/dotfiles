@@ -59,6 +59,14 @@
   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
   ```
 
+- Install oh-my-posh.  Follow the direction on the
+  [oh-my-posh Windows installation page](https://ohmyposh.dev/docs/installation/windows).
+
+
+  ```powershell
+  winget install JanDeDobbeleer.OhMyPosh -s winget
+  ```
+
 - In an ***admin*** PowerShell console, install dependencies used in this file:
 
   ```powershell
