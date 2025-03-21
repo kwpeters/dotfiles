@@ -28,5 +28,8 @@ existence of a config file and create one if it is missing.  So you
 may want to do the above steps all in one command:
 
 ```PowerShell
-> rm $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ItemType SymbolicLink -Value <absolute_path_to_this_file>
+> if (rm $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ItemType SymbolicLink -Value <absolute_path_to_this_file>}
 ```
+
+Note: The above syntax is used so that this command will work in older versions
+of Powershell.
