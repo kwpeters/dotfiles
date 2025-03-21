@@ -10,6 +10,13 @@
 - The path to the installed PowerShell executable will be:
   C:\Program Files\PowerShell\7\pwsh.exe
 
+  ### Upgrading
+
+  - You don't have to uninstall the old version first.
+
+  - Just download and install the msi from the above web page.  The installer
+    will properly upgrade your installation and preserve your settings.
+
 ## Profile Setup
 
 - To keep my PowerShell configuration in this repo, I would *normally* symlink
