@@ -27,9 +27,8 @@ If Windows Terminal is running, it will periodically check for the
 existence of a config file and create one if it is missing.  So you
 may want to do the above steps all in one command:
 
-```PowerShell
-> if (rm $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ItemType SymbolicLink -Value <absolute_path_to_this_file>}
-```
+In an **admin** cmd.exe:
 
-Note: The above syntax is used so that this command will work in older versions
-of Powershell.
+```
+del %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json && mklink %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json c:\users\kwpet\dev\kwp\dotfiles\windows-terminal\settings-<machinename>.json
+```
